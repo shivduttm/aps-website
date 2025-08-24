@@ -43,35 +43,58 @@ header {
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
+  padding: 10px 30px;
 }
 
-.logo {
+.logo-img {
   width: 60px;
-  height: 60px;
-  border-radius: 10px;
-  object-fit: cover;
+  height: auto;
 }
 
-header h1 {
-  font-size: 24px;
+.company-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-nav ul {
+/* Nav Bar */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.nav-links {
+  list-style: none;
   display: flex;
   gap: 30px;
-  list-style: none;
-  margin-top: 10px;
 }
 
-nav ul li a {
-  color: #fff;
-  font-weight: 500;
-  transition: color 0.3s ease;
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
 }
 
-nav ul li a:hover {
-  color: #00c6ff;
+/* Responsive: Stack logo on small screens */
+@media (max-width: 600px) {
+  .logo-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .company-name {
+    font-size: 18px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 
 /* Hero Section */
@@ -200,15 +223,6 @@ footer {
   border-radius: 50%;
   cursor: pointer;
   display: none;
-}
-
-/* WhatsApp Button */
-.whatsapp-float {
-  position: fixed;
-  bottom: 25px;
-  left: 25px;
-  z-index: 999;
-  animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
@@ -362,25 +376,6 @@ body {
   font-style: normal;
   margin-top: 5px;
   font-size: 16px;
-}
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-  cursor: pointer;
-}
-
-.whatsapp-float img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.whatsapp-float img:hover {
-  transform: scale(1.1);
 }
 
 /* Chat Button (Text + Icon) */

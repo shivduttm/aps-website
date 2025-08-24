@@ -2,31 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | APS Associates Pvt Ltd</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("fiCBoVUMTmbNZY_ro"); // Replace with your EmailJS Public Key
-  })();
-
-  document.getElementById("contact-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-    emailjs.sendForm('service_v5nvwok', 'template_9j5z1da', this)
-      .then(function() {
-        alert("Message sent successfully!");
-      }, function(error) {
-        alert("Failed to send message. Please try again.");
-        console.error(error);
-      });
-  });
-</script>
-
 <body>
   <header>
-    <div class="container">
+    <div class="container header-container">
       <div class="logo-container">
         <img src="images/logo.jpeg" alt="APS Logo" class="logo">
         <h1>APS Associates Pvt Ltd</h1>
@@ -36,32 +19,49 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section class="content-section">
+  <section class="content-section contact">
     <div class="container">
-      <h2>Contact Us</h2>
-      <form id="contact-form" class="contact-form">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required>
+      <h2>Get in Touch</h2>
+      <p>We'd love to hear from you! Reach out to us using the details below or send us a quick message.</p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Office Address</h3>
+          <p>APS Associates Pvt Ltd<br />
+          123 Real Estate Street,<br />
+          Bhubaneswar, Odisha, India - 751001</p>
 
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required>
+          <h3>Contact</h3>
+          <p>Email: contact@apsassociates.in<br />
+          Phone: +91 8917243176</p>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
+          <h3>Follow Us</h3>
+          <p>
+            <a href="#">Facebook</a> |
+            <a href="#">LinkedIn</a> |
+            <a href="#">Instagram</a>
+          </p>
+        </div>
 
-        <button type="submit">Send Message</button>
-      </form>
+        <div class="contact-form">
+          <form action="mailto:contact@apsassociates.in" method="POST" enctype="text/plain">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
 
-      <div class="contact-info">
-        <p><strong>Phone:</strong> +91-8917243176</p>
-        <p><strong>Email:</strong> contact@theapsa.co.in</p>
-        <p><strong>Address:</strong> Tamando, Bhubaneswar, Odisha, India</p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
       </div>
     </div>
   </section>

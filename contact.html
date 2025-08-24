@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | APS Associates Pvt Ltd</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("fiCBoVUMTmbNZY_ro"); // Replace with your EmailJS Public Key
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    emailjs.sendForm('service_v5nvwok', 'template_9j5z1da', this)
+      .then(function() {
+        alert("Message sent successfully!");
+      }, function(error) {
+        alert("Failed to send message. Please try again.");
+        console.error(error);
+      });
+  });
+</script>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="logo-container">
+        <img src="images/logo.jpeg" alt="APS Logo" class="logo">
+        <h1>APS Associates Pvt Ltd</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="content-section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form id="contact-form" class="contact-form">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div class="contact-info">
+        <p><strong>Phone:</strong> +91-8917243176</p>
+        <p><strong>Email:</strong> contact@theapsa.co.in</p>
+        <p><strong>Address:</strong> Tamando, Bhubaneswar, Odisha, India</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 APS Associates Pvt Ltd. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

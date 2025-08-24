@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>APS Associates Pvt Ltd</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">↑</button>
+    <script>
+  window.onscroll = function() {
+    document.getElementById("scrollTopBtn").style.display =
+      window.scrollY > 100 ? "block" : "none";
+  };
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+</script>
+  <header>
+    <div class="container">
+      <div class="logo-container">
+  <img src="images/logo.jpeg" alt="APS Logo" class="logo">
+  <h1>APS Associates Pvt Ltd</h1>
+</div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Your Trusted Business Partner</h2>
+      <p>Delivering quality solutions with excellence and integrity.</p>
+      <a href="#" class="btn">Get in Touch</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 APS Associates Pvt Ltd. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
